@@ -6,7 +6,8 @@
 import PDFViewerCard from "../components/PDFViewerCard";
 import ContactCard from "../components/ContactCard";
 // import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import KeyPoints from "../components/KeyPoints";
 // const AboutMePage = () => {
 //   return (
 //     // <div className="flex flex-col items-center justify-start h-screen bg-gradient-to-r from-blue-500 to-zinc-600 text-white overflow-y-auto">
@@ -106,11 +107,10 @@ import { useNavigate } from 'react-router-dom';
 const AboutMe = () => {
   const navigate = useNavigate();
   return (
-  
-      <div className="relative min-h-screen p-0 max-h-screen overflow-auto">
+    <div className="relative min-h-screen p-0 max-h-screen overflow-auto">
       {/* Home Button */}
       <button
-        onClick={() => navigate('/')}
+        onClick={() => navigate("/")}
         className="absolute top-2 right-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
       >
         Home
@@ -124,20 +124,35 @@ const AboutMe = () => {
           className="text-2xl text-center max-w-4xl mb-8 relative left-0 top-10 pt-8 py-12
         border border-white border-opacity-50 rounded-lg p-8 bg-gray-200 bg-opacity-40"
         >
-          Hi, I'm Philip! I'm a passionate web developer with experience in modern
-          web technologies like React, .NET, and more. I love creating
+          Hi, I'm Philip! I'm a passionate web developer with experience in
+          modern web technologies like React, .NET, and more. I love creating
           user-friendly, efficient, and scalable web applications. My goal is to
           always keep learning and building innovative solutions.
         </p>
 
         <div className="flex gap-11 w-full max-w-8xl pt-8">
-          <PDFViewerCard />
-          <ContactCard />
-        </div>
-      </div>
+          <div className="flex-1 bg-white rounded-lg p-4 shadow-lg">
+            <KeyPoints />
+            <PDFViewerCard />
+          </div>
 
+          <div className="fbg-white rounded-lg p-4 flex-[0.4] shadow-lg overflow-y-auto">
+            <ContactCard />
+          </div>
+        </div>
+
+        {/* <div className="flex gap-11 w-full max-w-8xl pt-8">
+          <div>
+          <KeyPoints />
+          <PDFViewerCard />
+          </div>
+       
+          
+          
+          <ContactCard />
+        </div> */}
+      </div>
     </div>
- 
   );
 };
 
